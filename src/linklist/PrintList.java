@@ -5,7 +5,7 @@
  * 我的方法：
  * 从头到尾遍历存入ArrayList中，再交换ArrayList中的元素
  * 网上方法：
- * 递归
+ * 递归，这个方法好
  */
 package linklist;
 
