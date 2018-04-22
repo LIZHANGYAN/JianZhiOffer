@@ -10,8 +10,11 @@
  */
 package string;
 
+import java.util.LinkedList;
+import java.util.Scanner;
+
 public class ReplaceSpace {
-    public String replaceSpace(StringBuffer str){
+    public static String replaceSpace(StringBuffer str){
         String replaceStr = "%20";
         String targetStr = " ";
         int index = str.indexOf(targetStr);
@@ -19,7 +22,16 @@ public class ReplaceSpace {
             str.replace(index,index+1,replaceStr);
             index = str.indexOf(targetStr);
         }
+
         return str.toString();
+    }
+
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        while(in.hasNext()){
+            String str = in.nextLine();
+            System.out.println(replaceSpace(new StringBuffer(str)));
+        }
     }
 }
 

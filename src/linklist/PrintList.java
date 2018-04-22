@@ -19,7 +19,6 @@ public class PrintList {
         if(listNode!=null){
             this.printListFromTailToHead(listNode.next);
             printList.add(listNode.val);
-
         }
         return this.printList;
 //        ArrayList<Integer> printList = new ArrayList<Integer>();
@@ -40,5 +39,9 @@ public class PrintList {
 //            j--;
 //        }
 //        return printList;
+    }
+
+    public static void main(String[] args) {
+
     }
 }
