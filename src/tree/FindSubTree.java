@@ -24,10 +24,8 @@ public class FindSubTree {
             for (int i = 0; i < M; i++) {
                 treenode2[i] = in.nextInt();
             }
-            counter = 0;
-            TreeNode root1 = createBinaryTreeByArray(treenode, counter);
-            counter = 0;
-            TreeNode root2 = createBinaryTreeByArray(treenode2, counter);
+            TreeNode root1 = TreeNode.createBinaryTreeByArray(treenode, 0);
+            TreeNode root2 = TreeNode.createBinaryTreeByArray(treenode2, 0);
             if(hasSubTree(root1, root2))
                 System.out.println("root2 is the subtree of root1");
             else
@@ -37,19 +35,7 @@ public class FindSubTree {
 
     }
 
-    static int counter = 0;
-    // 通过数组创建链式二叉树
-    public static TreeNode createBinaryTreeByArray(int[] treenodes, int i){
-        if(i<treenodes.length){
-            if(treenodes[i] == 0)
-                return null;
-            TreeNode root = new TreeNode(treenodes[i]);
-            root.left = createBinaryTreeByArray(treenodes, ++counter);
-            root.right = createBinaryTreeByArray(treenodes, ++counter);
-            return root;
-        }
-        return null;
-    }
+
 
     public static boolean hasSubTree(TreeNode root1, TreeNode root2){
         boolean result = false;

@@ -7,7 +7,7 @@ import java.util.*;
  * 输入一颗二叉树和一个整数，打印出二叉树中结点值的和为输入整数的所有路径。
  * 路径定义为从树的根结点开始往下一直到叶结点所经过的结点形成一条路径。
  */
-public class FindPath {
+public class FindPath25 {
 
 
 
@@ -67,8 +67,7 @@ public class FindPath {
             for (int i = 0; i < N; i++) {
                 treenodes[i] = in.nextInt();
             }
-            counter = 0;
-            TreeNode root = createBinaryTreeByArray(treenodes, counter);
+            TreeNode root = TreeNode.createBinaryTreeByArray(treenodes, 0);
             int target = in.nextInt();
             ArrayList<ArrayList<Integer>> lists = FindPath(root, target);
             for (ArrayList<Integer> list:
@@ -85,17 +84,5 @@ public class FindPath {
     }
 
 
-    static int counter = 0;
-    // 通过数组创建链式二叉树
-    public static TreeNode createBinaryTreeByArray(int[] treenodes, int i){
-        if(i<treenodes.length){
-            if(treenodes[i] == 0)
-                return null;
-            TreeNode root = new TreeNode(treenodes[i]);
-            root.left = createBinaryTreeByArray(treenodes, ++counter);
-            root.right = createBinaryTreeByArray(treenodes, ++counter);
-            return root;
-        }
-        return null;
-    }
+
 }

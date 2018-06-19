@@ -33,7 +33,7 @@ public class PrintTreeTopToDown {
             for (int i = 0; i < N; i++) {
                 treenodes[i] = in.nextInt();
             }
-            TreeNode root = createBinaryTreeByArray(treenodes, counter);
+            TreeNode root = TreeNode.createBinaryTreeByArray(treenodes, 0);
             ArrayList<Integer> list = printFromTopToDown(root);
             for (Integer i :
                     list) {
@@ -42,17 +42,5 @@ public class PrintTreeTopToDown {
         }
     }
 
-    static int counter = 0;
-    // 通过数组创建链式二叉树
-    public static TreeNode createBinaryTreeByArray(int[] treenodes, int i){
-        if(i<treenodes.length){
-            if(treenodes[i] == 0)
-                return null;
-            TreeNode root = new TreeNode(treenodes[i]);
-            root.left = createBinaryTreeByArray(treenodes, ++counter);
-            root.right = createBinaryTreeByArray(treenodes, ++counter);
-            return root;
-        }
-        return null;
-    }
+
 }

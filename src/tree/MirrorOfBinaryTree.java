@@ -31,7 +31,7 @@ public class MirrorOfBinaryTree {
                 treenode[i] = in.nextInt();
             }
 
-            TreeNode root = createBinaryTreeByArray(treenode, counter);
+            TreeNode root = TreeNode.createBinaryTreeByArray(treenode, 0);
 
             TreeNode newRoot = getMirrorOfBT(root);
 
@@ -62,17 +62,5 @@ public class MirrorOfBinaryTree {
     }
 
 
-    static int counter = 0;
-    // 通过数组创建链式二叉树
-    public static TreeNode createBinaryTreeByArray(int[] treenodes, int i){
-        if(i<treenodes.length){
-            if(treenodes[i] == 0)
-                return null;
-            TreeNode root = new TreeNode(treenodes[i]);
-            root.left = createBinaryTreeByArray(treenodes, ++counter);
-            root.right = createBinaryTreeByArray(treenodes, ++counter);
-            return root;
-        }
-        return null;
-    }
+
 }
